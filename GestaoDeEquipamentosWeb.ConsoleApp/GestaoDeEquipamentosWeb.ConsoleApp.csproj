@@ -8,9 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers\" />
     <Folder Include="ModuloChamado\" />
     <Folder Include="ModuloEquipamento\" />
     <Folder Include="ModuloFabricante\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
 
 </Project>

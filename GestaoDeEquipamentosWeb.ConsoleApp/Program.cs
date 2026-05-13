@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllersWithViews();
+
+WebApplication app = builder.Build();
+
+app.UseRouting();
+app.MapDefaultControllerRoute();
+
+app.Run();
