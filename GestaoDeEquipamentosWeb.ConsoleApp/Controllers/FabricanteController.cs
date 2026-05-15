@@ -56,7 +56,6 @@ namespace GestaoDeEquipamentosWeb.ConsoleApp.Controllers
             return View(fabricante);
         }
 
-
         [HttpPost]
 
         public ActionResult Editar(string id, string nome, string email, string telefone)

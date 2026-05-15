@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="~/css/styles.css">
+
+    <title>@ViewBag.Titulo - Gestão De Equipamentos</title>
+</head>
+
+    <body>
+        <nav>
+            <h3>Gestão De Equipamentos</h3>
+
+            <div class="links-navbar">
+                <a href="/">Início</a>
+                <a href="/Fabricante/Listar">Controle De Fabricantes</a>
+                <a href="/Equipamento/Listar">Controle De Equipamentos</a>
+                <a href="/Chamado/Listar">Controle De Chamados</a>
+                <a href="https://www.academiadoprogramador.net" target="_blank">Academia Do Programador</a>
+            </div>
+        </nav>
+
+            <header>
+               <h2>@ViewBag.Titulo<h2>
+            </header>
+        <main>
+            @RenderBody()      
+        </main>
+
+    </body>
+</html>

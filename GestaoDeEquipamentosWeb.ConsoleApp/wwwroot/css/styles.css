@@ -1,0 +1,88 @@
+:root {
+    font-size: 18px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "Google Sans", sans-serif;
+    color: white;
+
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+nav { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.links-navbar {
+    display: flex;
+    gap: 20px;
+    
+    margin-left: auto;
+}
+
+.links-navbar > a {
+    color:white;
+    text-decoration: none;
+}
+.btn-cadastrar {
+    display: inline-block;
+
+    border: 1px solid rgb(146, 144, 144);
+    border-radius: 100vmax;
+
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 600;
+
+    padding: 8px 40px;
+
+    margin: 15px 0px;
+}
+
+.registros{
+    width: 100%;
+    min-width: 720px;
+}
+
+.registros th,
+.registros td{
+    padding:16px 18px;
+    color: rgb(155, 155, 155);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.registros th{
+    background-color: rgba(121, 119, 114, 0.14);
+    color: rgb(146, 144, 144);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.registros tbody tr{
+    border-top: 1px solid rgba(61, 61, 61, 0.14);
+    background-color: rgba(78, 78, 78, 0.45);
+}
+.registros a {
+    border: 1px solid rgb(146, 144, 144);;
+    border-radius: 100vmax;
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 7px 16px;
+    text-decoration: none;
+}
