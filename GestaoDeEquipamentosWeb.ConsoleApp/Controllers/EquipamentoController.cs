@@ -71,6 +71,79 @@ public class EquipamentoController : Controller
         return RedirectToAction(nameof(Listar));
     }
 
+    [HttpGet]
+    public ActionResult Editar(string id)
+    {
+        Equipamento? equipamento = repositorioEquipamento.SelecionarPorId(id);
+
+        if (equipamento == null)
+            return RedirectToAction(nameof(Listar));
+
+        EditarEquipamentosViewModel editarVm = new EditarEquipamentosViewModel(
+            id,
+            equipamento.Nome,
+            equipamento.PrecoAquisicao,
+            equipamento.DataFabricacao,
+            equipamento.Fabricante.Id
+        );
+
+        ViewBag.Fabricantes = CarregarFabricantes();
+
+        return View(editarVm);
+    }
+
+    [HttpPost]
+    public ActionResult Editar(EditarEquipamentosViewModel editarVm)
+    {
+        Fabricante? fabricante = repositorioFabricante.SelecionarPorId(editarVm.FabricanteId);
+
+        if (fabricante == null)
+            return RedirectToAction(nameof(Listar));
+
+        Equipamento equipamentoAtualizado = new Equipamento(
+            editarVm.Nome,
+            editarVm.PrecoAquisicao,
+            editarVm.DataFabricacao,
+            fabricante
+        );
+
+        repositorioEquipamento.Editar(editarVm.Id, equipamentoAtualizado);
+
+        return RedirectToAction(nameof(Listar));
+    }
+
+
+
+    [HttpGet]
+    public ActionResult Excluir(string id)
+    {
+        Equipamento? equipamento = repositorioEquipamento.SelecionarPorId(id);
+
+        if (equipamento == null)
+            return RedirectToAction(nameof(Listar));
+
+        ExcluirEquipamentosViewModel excluirVm = new ExcluirEquipamentosViewModel(
+            id,
+            equipamento.Nome,
+            equipamento.PrecoAquisicao,
+            equipamento.DataFabricacao,
+            equipamento.Fabricante.Nome
+        );
+
+        return View(excluirVm);
+    }
+
+    [HttpPost]
+    [ActionName("Excluir")]
+    public ActionResult Excluir(ExcluirEquipamentosViewModel excluirVm)
+    {
+        Equipamento? equipamento = repositorioEquipamento.SelecionarPorId(excluirVm.Id);
+
+        if (equipamento != null)
+            repositorioEquipamento.Excluir(equipamento);
+        return RedirectToAction(nameof(Listar));
+    }
+
     private List<ListarFabricanteViewModel> CarregarFabricantes()
     {
         List<Fabricante> fabricantes = repositorioFabricante.SelecionarTodos();

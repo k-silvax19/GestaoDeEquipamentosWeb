@@ -16,3 +16,19 @@ public record CadastrarEquipamentosViewModel(
     DateTime DataFabricacao,
     string FabricanteId
 );
+
+public record EditarEquipamentosViewModel(
+    string Id,
+    string Nome,
+    decimal PrecoAquisicao,
+    DateTime DataFabricacao,
+    string FabricanteId
+);
+
+public record ExcluirEquipamentosViewModel(
+    string Id,
+    string Nome,
+    decimal PrecoAquisicao,
+    DateTime DataFabricacao,
+    string Fabricante
+);

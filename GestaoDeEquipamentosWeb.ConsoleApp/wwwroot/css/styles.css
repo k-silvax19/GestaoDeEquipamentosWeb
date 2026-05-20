@@ -131,7 +131,7 @@ nav {
     outline: 3px solid rgba(0, 0, 0, 0);
 }
 
-.formulario-campo input:disabled
+.formulario-campo input:disabled,
 .formulario-campo select:disabled {
     background-color: rgba(128, 127, 127, 0.808);
     color: rgba(29, 29, 29, 0.7);
