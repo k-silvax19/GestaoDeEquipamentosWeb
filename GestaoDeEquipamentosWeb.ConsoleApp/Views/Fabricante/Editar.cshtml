@@ -1,27 +1,28 @@
-﻿@using GestaoDeEquipamentosWeb.ConsoleApp.ModuloFabricante
-@model Fabricante
-@{
+﻿@{
     Layout = "_Layout";
     ViewBag.Titulo = "Edição De Fabricante";
+
 }
+@using GestaoDeEquipamentosWeb.ConsoleApp.Models
+@model EditarFabricanteViewModel
 
 <form class="formulario" action="/Fabricante/Editar/@Model.Id" method="post">
     <div class="formulario-campo">
         <label>Nome</label>
         <br>
-        <input type="text" name="Nome" value @Model.Nome">
+        <input type="text" name="Nome" value="@Model.Nome">
     </div>
 
     <div class="formulario-campo">
         <label>Email</label>
         <br>
-        <input type="email" name="Email"value @Model.Email">
+        <input type="text" name="Nome" value="@Model.Email">
     </div>
 
     <div class="formulario-campo">
         <label>Telefone</label>
         <br>
-        <input type="text" name="Telefone"value @Model.Telefone">
+        <input type="text" name="Nome" value="@Model.Telefone">
     </div>
 
     <div class ="formulario-acoes">

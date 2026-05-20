@@ -1,9 +1,9 @@
-﻿@using GestaoDeEquipamentosWeb.ConsoleApp.ModuloFabricante
-@model Fabricante
-@{
+﻿@{
     Layout = "_Layout";
     ViewBag.Titulo = "Exclusão De Fabricantes";
 }
+@using GestaoDeEquipamentosWeb.ConsoleApp.Models
+@model ExcluirFabricanteViewModel
 
 <form class="formulario" action="/Fabricante/Excluir/@Model.Id" method="post">
 
@@ -12,19 +12,19 @@
     <div class="formulario-campo">
         <label>Nome</label>
         <br>
-        <input type="text" name="Nome" value @Model.Nome" disabled>
+        <input type="text" name="Nome" value="@Model.Nome" disabled>
     </div>
 
     <div class="formulario-campo">
         <label>Email</label>
         <br>
-        <input type="email" name="Email"value @Model.Email" disabled>
+        <input type="email" name="Email" value="@Model.Email" disabled>
     </div>
 
     <div class="formulario-campo">
         <label>Telefone</label>
         <br>
-        <input type="text" name="Telefone"value @Model.Telefone" disabled>
+        <input type="text" name="Telefone"value="@Model.Telefone" disabled>
     </div class="formulario-campo">
 
     <div class ="formulario-acoes">

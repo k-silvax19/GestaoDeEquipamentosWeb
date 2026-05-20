@@ -112,7 +112,8 @@ nav {
     text-transform: uppercase;
 }
 
-.formulario-campo input {
+.formulario-campo input,
+.formulario-campo select {
     width: 100%;
     box-sizing: border-box;
     border: 1px solid rgba(160, 157, 160, 0.12);
@@ -124,12 +125,14 @@ nav {
     font-size: 1rem;
 }
 
-.formulario-campo input:focus {
+.formulario-campo input:focus,
+.formulario-campo select:focus {
     border-color: rgba(0, 0, 0, 0);
     outline: 3px solid rgba(0, 0, 0, 0);
 }
 
-.formulario-campo input:disabled {
+.formulario-campo input:disabled
+.formulario-campo select:disabled {
     background-color: rgba(128, 127, 127, 0.808);
     color: rgba(29, 29, 29, 0.7);
 }
