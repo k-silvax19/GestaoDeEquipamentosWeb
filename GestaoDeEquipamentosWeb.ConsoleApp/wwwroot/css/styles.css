@@ -1,10 +1,10 @@
 :root {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
@@ -37,19 +37,20 @@ nav {
     color: white;
     text-decoration: none;
 }
+
 .btn-cadastrar {
     display: inline-block;
 
     border: 1px solid rgb(146, 144, 144);
     border-radius: 100vmax;
 
-    color: rgb(255, 255, 255);
+    color: white;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
 
     padding: 8px 40px;
 
-    margin: 15px 0px;
+    margin: 15px 0;
 }
 
 .registros {
@@ -60,27 +61,27 @@ nav {
 .registros th,
 .registros td {
     padding: 16px 18px;
-    color: rgb(155, 155, 155);
+    color: rgb(220, 220, 220);
     text-align: left;
     vertical-align: middle;
 }
 
 .registros th {
-    background-color: rgba(121, 119, 114, 0.14);
-    color: rgb(146, 144, 144);
+    background-color: rgba(146, 144, 144, 0.14);
+    color: rgb(200, 200, 200);
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .registros tbody tr {
-    border-top: 1px solid rgba(61, 61, 61, 0.14);
     background-color: rgba(78, 78, 78, 0.45);
 }
+
 .registros a {
-    border: 1px solid rgb(146, 144, 144);
+    border: 1px solid rgba(146, 144, 144, 0.45);
     border-radius: 100vmax;
-    color: rgb(255, 255, 255);
+    color: white;
     font-size: 0.9rem;
     font-weight: 600;
     padding: 7px 16px;
@@ -88,14 +89,14 @@ nav {
 }
 
 .formulario {
-    width: min (100%, 630px);
+    width: min(100%, 620px);
     margin: 30px auto;
     padding: 28px;
 
-    border: 1px solid rgba(167, 167, 167, 0.808);
+    border: 1px solid rgba(167, 167, 167, 0.22);
     border-radius: 14px;
 
-    background-color: rgba(128, 127, 127, 0.808);
+    background-color: rgba(128, 127, 127, 0.55);
     box-shadow: 0 18px 45px rgba(160, 157, 160, 0.12);
 }
 
@@ -105,8 +106,7 @@ nav {
 
 .formulario-campo label {
     display: block;
-    margin-bottom: 8px;
-    color: rgba(0, 0, 0);
+    color: rgb(230, 230, 230);
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -116,25 +116,25 @@ nav {
 .formulario-campo select {
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid rgba(160, 157, 160, 0.12);
+    border: 1px solid rgba(180, 180, 180, 0.45);
     border-radius: 10px;
     padding: 12px 14px;
-    background-color: rgba(0, 0, 0, 0.19);
-    color: rgb(51, 50, 51);
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
     font-family: inherit;
     font-size: 1rem;
 }
 
 .formulario-campo input:focus,
 .formulario-campo select:focus {
-    border-color: rgba(0, 0, 0, 0);
-    outline: 3px solid rgba(0, 0, 0, 0);
+    border-color: white;
+    outline: 3px solid rgba(255, 255, 255, 0.16);
 }
 
 .formulario-campo input:disabled,
 .formulario-campo select:disabled {
-    background-color: rgba(128, 127, 127, 0.808);
-    color: rgba(29, 29, 29, 0.7);
+    background-color: rgba(128, 127, 127, 0.35);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .formulario-acoes {
@@ -146,10 +146,10 @@ nav {
 
 .formulario-acoes a,
 .formulario-acoes button {
-    border: 1px solid rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(180, 180, 180, 0.45);
     border-radius: 100vmax;
     background-color: transparent;
-    color: rgb(0, 0, 0);
+    color: white;
     font-family: inherit;
     font-size: 0.95rem;
     font-weight: 600;
@@ -160,16 +160,16 @@ nav {
 
 .formulario-acoes button {
     background-color: rgb(77, 74, 74);
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 .formulario-alerta {
     margin-top: 0;
     margin-bottom: 24px;
-    border-left: 4px solid rgb(29, 28, 29);
+    border-left: 4px solid rgb(180, 180, 180);
     border-radius: 10px;
     padding: 14px 16px;
-    background-color: rgba(46, 45, 46, 0.1);
-    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
     font-weight: 600;
 }
