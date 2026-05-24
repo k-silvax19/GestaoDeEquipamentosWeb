@@ -1,46 +1,44 @@
 @{
     Layout = "_Layout";
-    ViewBag.Titulo = "Exclusão de Chamado";
+    ViewBag.Titulo = "Listagem de Equipamentos";
 }
 
-@model ExcluirChamadoViewModel;
+@model List<ListarEquipamentosViewModel>
 
-<form class="formulario" asp-action="Excluir" asp-route-id="@Model.Id" method="post">
+<a class="btn-cadastrar" asp-action="Cadastrar">Cadastrar Novo</a>
 
-    <p class="formulario-alerta">Deseja realmente excluir este chamado?</p>
-
-    <div class="formulario-campo">
-        <label asp-for="Titulo">Titulo</label>
-        <input asp-for="Titulo" type="text" disabled>
-    </div>
-
-    <div class="formulario-campo">
-        <label asp-for="Descricao">Descricao</label>
-        <textarea asp-for="Descricao" disabled></textarea>
-    </div>
-
-    <div class="formulario-campo">
-        <label asp-for="Equipamento">Equipamento</label>
-        <input asp-for="Equipamento" type="text" disabled>
-    </div>
-
-    <div class="formulario-campo">
-        <label asp-for="DataAbertura">Data de Abertura</label>
-        <input asp-for="DataAbertura" type="text" asp-format="{0:dd/MM/yyyy}" disabled>
-    </div>
-
-    <div class="formulario-campo">
-        <label asp-for="TempoDecorrido">Tempo Decorrido</label>
-        <input asp-for="TempoDecorrido" type="text" disabled>
-    </div>
-
-    <div class="formulario-campo">
-        <label>Status</label>
-        <input type="text" value="@(Model.EstaConcluido ? "Concluido" : "Aberto")" disabled>
-    </div>
-
-    <div class="formulario-acoes">
-        <a asp-action="Listar">Voltar</a>
-        <button type="submit">Confirmar</button>
-    </div>
-</form>
+@if (Model.Count == 0)
+{
+    <p class="formulario-alerta">Nenhum equipamento cadastrado.</p>
+}
+else
+{
+    <table class="registros">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Preço de Aquisição</th>
+                <th>Data de Fabricação</th>
+                <th>Fabricante</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ListarEquipamentosViewModel e in Model)
+            {
+                <tr>
+                    <td>@e.Id</td>
+                    <td>@e.Nome</td>
+                    <td>@e.PrecoAquisicao.ToString("C2")</td>
+                    <td>@e.DataFabricacao.ToShortDateString()</td>
+                    <td>@e.Fabricante</td>
+                    <td>
+                        <a asp-action="Editar" asp-route-id="@e.Id">Editar</a>
+                        <a asp-action="Excluir" asp-route-id="@e.Id">Excluir</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
